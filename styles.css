@@ -3,6 +3,8 @@
     --screen-background: #31363F;
     --app-gray: rgba(255, 255, 255, 0.2);
     --app-light-gray: rgba(255, 255, 255, 0.5);
+    --text-color: #F5F7F8;
+    --text-shadow: #424769;
 }
 
 *,
@@ -11,6 +13,10 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+html {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -56,8 +62,8 @@ body {
 /* Screen Styles */
 
 .screen-container,
-.screen-input,
-.screen-output {
+.left-side,
+.right-side {
     height: 100%;
     padding: 8px;
     display: flex;
@@ -71,22 +77,91 @@ body {
     background-color: var(--screen-background);
 }
 
-.screen-input {
+.left-side {
     width: 35%;
     flex-direction: column;
+    gap: 8px;
     background-color: var(--app-gray);
 }
 
-.screen-seperator {
+.seperator {
     width: 4px;
     border-radius: 50%;
     background-color: var(--app-light-gray);
 }
 
-.screen-output {
+.right-side {
     width: 75%;
     flex-direction: column;
     background-color: var(--app-gray);
 }
 
-/* Input Styles */
+/* Input Section Styles */
+
+.title,
+.input-box,
+.input-buttons,
+.credits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    border-radius: 16px;
+    background-color: var(--app-light-gray);
+}
+
+.title,
+.input-label,
+.credits,
+input,
+button {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 var(--text-shadow);
+    color: var(--text-color);
+}
+
+.title {
+    height: 40%;
+    font-size: 2.5rem;
+}
+
+.input-box {
+    height: 25%;
+}
+
+input,
+button {
+    border-radius: 8px;
+    border: 0;
+    background-color: var(--screen-background);
+}
+
+input {
+    width: 200px;
+    height: 30px;
+}
+
+.input-buttons {
+    height: 25%;
+}
+
+button {
+    width: 180px;
+    height: 30px;
+    box-shadow: 0 4px 0 #F5F7F8;
+}
+
+button:active {
+    position: relative;
+    top: 4px;
+    box-shadow: none;
+    background-color: var(--text-shadow);
+}
+
+.credits {
+    height: 10%;
+}

@@ -1,5 +1,8 @@
 :root {
     --sky-blue: #76ABAE;
+    --screen-background: #31363F;
+    --app-gray: rgba(255, 255, 255, 0.2);
+    --app-light-gray: rgba(255, 255, 255, 0.5);
 }
 
 *,
@@ -52,9 +55,34 @@ body {
 
 /* Screen Styles */
 
-.screen-container {
-    width: 100%;
+.screen-container,
+.screen-input,
+.screen-seperator,
+.screen-output {
     height: 100%;
     border-radius: 16px;
-    background-color: #DDDDDD;
+}
+
+.screen-container {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    background-color: var(--screen-background);
+}
+
+.screen-input {
+    width: 35%;
+    background-color: var(--app-gray);
+}
+
+.screen-seperator {
+    width: 4px;
+    border-radius: 50%;
+    background-color: var(--app-light-gray);
+}
+
+.screen-output {
+    width: 75%;
+    background-color: var(--app-gray);
 }

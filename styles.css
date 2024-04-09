@@ -57,22 +57,23 @@ body {
 
 .screen-container,
 .screen-input,
-.screen-seperator,
 .screen-output {
     height: 100%;
+    padding: 8px;
+    display: flex;
     border-radius: 16px;
 }
 
 .screen-container {
     width: 100%;
     padding: 8px;
-    display: flex;
     gap: 8px;
     background-color: var(--screen-background);
 }
 
 .screen-input {
     width: 35%;
+    flex-direction: column;
     background-color: var(--app-gray);
 }
 
@@ -84,5 +85,8 @@ body {
 
 .screen-output {
     width: 75%;
+    flex-direction: column;
     background-color: var(--app-gray);
 }
+
+/* Input Styles */

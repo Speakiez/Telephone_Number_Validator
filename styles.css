@@ -26,6 +26,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--sky-blue);
+    animation:  onPageLoad 2s ease-out 0s 1;
 }
 
 a {
@@ -199,9 +200,18 @@ button:active {
     border-top: 12px solid #FF204E;
 }
 
+@keyframes onPageLoad {
+    0% {
+        transform: translateY(-150%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 @keyframes createOutput {
     0% {
-        transform: translateX(-495px);
+        transform: translateX(-100%);
         opacity: 0;
     }
     100% {

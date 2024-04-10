@@ -28,6 +28,11 @@ body {
     background-color: var(--sky-blue);
 }
 
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 /* Tablet styles */
 
 .tablet-container {

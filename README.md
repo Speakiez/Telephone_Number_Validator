@@ -1,4 +1,4 @@
 # telephone_number_validator
-A telephone number validator
+A Telephone Number Validator styled to look like tablet 
 
-This is a project that I'm making for the freeCodeCamp JavaScript Algorithms and Data Structures (Beta) course
+This is a project that I made for the freeCodeCamp JavaScript Algorithms and Data Structures (Beta) course

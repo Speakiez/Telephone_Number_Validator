@@ -67,20 +67,19 @@ body {
     height: 100%;
     padding: 8px;
     display: flex;
+    gap: 8px;
     border-radius: 16px;
 }
 
 .screen-container {
     width: 100%;
     padding: 8px;
-    gap: 8px;
     background-color: var(--screen-background);
 }
 
 .left-side {
     width: 35%;
     flex-direction: column;
-    gap: 8px;
     background-color: var(--app-gray);
 }
 
@@ -92,6 +91,7 @@ body {
 
 .right-side {
     width: 75%;
+    overflow-y: auto;
     flex-direction: column;
     background-color: var(--app-gray);
 }
@@ -165,4 +165,30 @@ button:active {
 
 .credits {
     height: 10%;
+}
+
+/* Output Section Styles */
+
+.output {
+    width: 100%;
+    min-height: 80px;
+    padding: 4px 0 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 var(--text-shadow);
+    color: var(--text-color);
+    border-radius: 8px;
+    background-color: var(--app-light-gray);
+}
+
+.valid {
+    border-top: 12px solid #1679AB;
+}
+
+.invalid {
+    border-top: 12px solid #FF204E;
 }

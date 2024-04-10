@@ -1,4 +1,5 @@
 const inputElement = document.getElementById("input");
+const outputContainer = document.querySelector(".right-side");
 const checkButton = document.querySelector(".check-button");
 const clearButton = document.querySelector(".clear-button");
 

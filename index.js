@@ -4,8 +4,7 @@ const checkButton = document.querySelector(".check-button");
 const clearButton = document.querySelector(".clear-button");
 
 const numRegex = /^(?:1|1 )?(?:\d\d\d|\(\d\d\d\))[\- ]?\d\d\d[\- ]?\d\d\d\d$/;
-const userInputs = [];
-
+let userInputs = [];
 
 const validateUserInput = (userInput) => {
     if (!userInput) {
@@ -15,22 +14,38 @@ const validateUserInput = (userInput) => {
 
     if (numRegex.test(userInput)) {
         userInputs.push({
-            isValid: true,
+            isValid: "valid",
             text: userInput
         });
     } else {
         userInputs.push({
-            isValid: false,
+            isValid: "invalid",
             text: userInput
         });
     }
 
-    updateDisplay();
+    updateDisplay(userInputs.at(-1));
     inputElement.value = "";
 }
 
-const updateDisplay = () => {
+const updateDisplay = (outputObj) => {
+    if (!outputObj) {
+        outputContainer.replaceChildren();
+        return;
+    }
     
+    const outputElem = document.createElement("div");
+    outputElem.id = userInputs.indexOf(outputObj);
+
+    if (outputObj.isValid === "valid") {
+        outputElem.classList = `output ${outputObj.isValid}`;
+        outputElem.textContent = `Valid US number: ${outputObj.text}`;
+    } else {
+        outputElem.classList = `output ${outputObj.isValid}`;
+        outputElem.textContent = `Invalid US number: ${outputObj.text}`;
+    }
+
+    outputContainer.appendChild(outputElem);
 }
 
 checkButton.addEventListener("click", () => {
@@ -38,7 +53,8 @@ checkButton.addEventListener("click", () => {
 });
 
 clearButton.addEventListener("click", () => {
-    console.log("Clear");
+    userInputs = [];
+    updateDisplay();
 });
 
 inputElement.addEventListener("keydown", (event) => {

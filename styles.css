@@ -188,6 +188,7 @@ button:active {
     color: var(--text-color);
     border-radius: 8px;
     background-color: var(--app-light-gray);
+    animation: createOutput 1s ease-in-out 1;
 }
 
 .valid {
@@ -196,4 +197,15 @@ button:active {
 
 .invalid {
     border-top: 12px solid #FF204E;
+}
+
+@keyframes createOutput {
+    0% {
+        transform: translateX(-495px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

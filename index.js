@@ -48,17 +48,26 @@ const updateDisplay = (outputObj) => {
     outputContainer.appendChild(outputElem);
 }
 
+inputElement.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        validateUserInput(inputElement.value);
+    }
+});
+
 checkButton.addEventListener("click", () => {
     validateUserInput(inputElement.value);
 });
 
 clearButton.addEventListener("click", () => {
-    userInputs = [];
-    updateDisplay();
-});
+    if (!userInputs.length) {
+        alert("The outputs tab is already empty!");
+        return;
+    }
 
-inputElement.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-        validateUserInput(inputElement.value);
+    const clearConfirmation = confirm("Are you sure you want to clear the outputs tab?");
+
+    if (clearConfirmation) {
+        userInputs = [];
+        updateDisplay();
     }
 });

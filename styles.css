@@ -152,6 +152,7 @@ input {
 button {
     width: 180px;
     height: 30px;
+    cursor: pointer;
     box-shadow: 0 4px 0 #F5F7F8;
 }
 
